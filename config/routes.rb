@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
+  root 'static_pages#home'
+  get '/about', to: 'static_pages#about', as: :about 
+  #I still don't understand this.  Why do we need to do this?
+  #and why do we do it this way instead of using _path?
+
+  resources :classifieds
+  # get 'static_pages/home'
+
+  # get 'static_pages/about'
+
   # get 'classifieds/post'
 
   # get 'classifieds/index'
 
   # get 'classifieds/new'
 
-  resources :classifieds
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
