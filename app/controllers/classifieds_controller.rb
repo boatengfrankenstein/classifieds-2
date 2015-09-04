@@ -37,7 +37,13 @@ class ClassifiedsController < ApplicationController
   else
     render :edit
   end
-end 
+end  
+
+  def destroy
+    @classified = Classified.find(params[:id])
+    @classified.destroy
+    redirect_to classifieds_path
+  end  
 
    private
 
