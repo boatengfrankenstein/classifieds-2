@@ -25,6 +25,20 @@ class ClassifiedsController < ApplicationController
     end
   end
 
+  def edit
+    @classified = Classified.find(params[:id])
+  end 
+
+  def update
+  @classified = Classified.find(params[:id])
+  
+  if @classified.update(classified_params)
+    redirect_to classifieds_path
+  else
+    render :edit
+  end
+end 
+
    private
 
   def classified_params
