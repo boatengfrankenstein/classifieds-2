@@ -1,2 +1,13 @@
-<h1>Classifieds#new</h1>
-<p>Find me in app/views/classifieds/new.html.erb</p>
+<h1> New Post </h1>
+<%= form_for @classified do |f| %>
+  <%= f.label :title %>: 
+  <%= f.text_field :title %>
+
+  <%= f.label :author %> 
+  <%= f.text_field :author %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.submit %>
+<% end %>
